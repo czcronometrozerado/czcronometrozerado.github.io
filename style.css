@@ -1,0 +1,60 @@
+html {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+html::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+#chart-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+header, footer{
+    color: white;
+    background-color: rgba(223, 12, 0); 
+    width: 100vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#czIcone{
+    margin: 15px;
+}
+li{
+    display: inline-block;
+    margin: 0 10px;
+}
+li a{
+    color: white;
+    text-decoration: none;
+}
+h5{
+    text-align: center;
+    margin: 10px;
+}
+select{
+    text-align: center;
+}
+.graficos{
+    min-height:500px;
+}
+@media (max-width: 536px) {
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .graficos{
+        min-height:350px;
+    }
+    .nomeCronometroZerado{
+        margin-top: 7px;
+    }
+}
+footer{
+    padding-top: 10px;
+}
+footer ul li{
+    margin: 0px 10px;
+}
