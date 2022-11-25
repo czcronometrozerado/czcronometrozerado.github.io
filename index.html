@@ -44,7 +44,7 @@
         </div>
         <br>
     </body>
-    <!--
+
     <footer class="d-flex align-items-center flex-column">
         Criado por Matheus Peixoto
         <ul class="list-inline">
@@ -52,14 +52,14 @@
             <li><a href="https://www.linkedin.com/in/matheus-peixoto-4344141b7/" target="_blank"><u>LinkedIn</u></a></li>
         </ul>
     </footer>
-    -->
+
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 
     var corridas = {
-        nomeEtapas: ["Bahrain", "Jeddah", "Austrália", "Ímola", "Miami", "Espanha", "Mônaco", "Azerbaijão", "Canadá", "Inglaterra", "Áustria"],
+        nomeEtapas: ["Bahrain", "Jeddah", "Austrália", "Ímola", "Miami", "Espanha", "Mônaco", "Azerbaijão", "Canadá", "Inglaterra", "Áustria", "França", "Hungria", "Bélgica", "Holanda", "Monza", "Singapura", "Japão", "EUA", "México", "Brasil", "Abu Dhabi"],
         caio: [
             ["Leclerc", "Verstappen", "Hamilton", "Gasly", "Russel"],//Bahrain
             ["Verstappen", "Leclerc", "Sainz", "Hamilton", "Bottas"],//Jeddah
@@ -72,6 +72,17 @@
             ["Leclerc", "Verstappen", "Perez", "Sainz", "Russel"],//Canadá
             ["Verstappen", "Leclerc", "Hamilton", "Sainz", "Russel"],//Inglaterra
             ["Verstappen", "Leclerc", "Hamilton", "Perez", "Russel"],//Áustria
+            ["Leclerc", "Verstappen", "Sainz", "Perez", "Hamilton"],//França
+            ["Leclerc", "Verstappen", "Perez", "Hamilton", "Magnussen"],//Hungria
+            ["Verstappen", "Hamilton", "Perez", "Leclerc", "Sainz"],//Bélgica
+            ["Verstappen", "Leclerc", "Hamilton", "Perez", "Alonso"],//Holanda
+            ["Verstappen", "Hamilton", "Russel", "Alonso", "Leclerc"],//Monza
+            ["Verstappen", "Perez", "Leclerc", "Hamilton", "Sainz"],//Singapura
+            ["Hamilton", "Verstappen", "Leclerc", "Russel", "Sainz"],//Japão
+            ["Verstappen", "Leclerc", "Hamilton", "Perez", "Sainz"],//EUA
+            ["Perez", "Verstappen", "Leclerc", "Hamilton", "Russel"],//México
+            ["Hamilton", "Verstappen", "Perez", "Leclerc", "Stroll"],//Brasil
+            ["Verstappen", "Hamilton", "Leclerc", "Russel", "Perez"]//Abu Dhabi
         ],
         rafa: [
             ["Hamilton", "Leclerc", "Verstappen", "Russel", "Hulkenberg"],//Bahrain
@@ -85,6 +96,17 @@
             ["Verstappen", "Perez", "Leclerc", "Russel", "Vettel"],//Canadá
             ["Leclerc", "Verstappen", "Sainz", "Perez", "Hamilton"],//Inglaterra
             ["Leclerc", "Verstappen", "Perez", "Sainz", "Russel"],//Áustria
+            ["Leclerc", "Verstappen", "Perez", "Hamilton", "Russel"],//França
+            ["Leclerc", "Sainz", "Verstappen", "Hamilton", "Perez"],//Hungria
+            ["Verstappen", "Sainz", "Leclerc", "Hamilton", "Perez"],//Bélgica
+            ["Leclerc", "Verstappen", "Perez", "Hamilton", "Alonso"],//Holanda
+            ["Alonso", "Verstappen", "Leclerc", "Norris", "Albon"],//Monza
+            ["Verstappen", "Leclerc", "Hamilton", "Perez", "Alonso"],//Singapura
+            ["Verstappen", "Leclerc", "Hamiltopn", "Perez", "Sainz"],//Japão
+            ["Verstappen", "Perez", "Leclerc", "Sainz", "Hamilton"],//EUA
+            ["Perez", "Verstappen", "Leclerc", "Hamilton", "Norris"],//México
+            ["Verstappen", "Hamilton", "Leclerc", "Perez", "Stroll"],//Brasil
+            ["Verstappen", "Hamilton", "Russel", "Perez", "Leclerc"]//Abu Dhabi
         ],
         operadorCamera: [
             ["Não informou", "Não informou", "Não informou", "Não informou", "Não informou"],//Bahrain
@@ -98,6 +120,17 @@
             ["Verstappen", "Perez", "Leclerc", "Hamilton", "Alonso"],//Canadá
             ["Leclerc", "Verstappen", "Perez", "Sainz", "Alonso"],//Inglaterra
             ["Verstappen", "Leclerc", "Perez", "Russel", "Alonso"],//Áustria
+            ["Verstappen", "Hamilton", "Alonso", "Perez", "Russel"],//França 1:46:00 Falando verdades sobre a ferrari
+            ["Não informou", "Não informou", "Não informou", "Não informou", "Não informou"],//Hungria
+            ["Não informou", "Não informou", "Não informou", "Não informou", "Não informou"],//Bélgica
+            ["Não informou", "Não informou", "Não informou", "Não informou", "Não informou"],//Holanda
+            ["Não informou", "Não informou", "Não informou", "Não informou", "Não informou"],//Monza
+            ["Não informou", "Não informou", "Não informou", "Não informou", "Não informou"],//Singapura
+            ["Leclerc", "Perez", "Sainz", "Hamilton", "Russel"],//Japão
+            ["Verstappen", "Perez", "Leclerc", "Hamilton", "Russel"],//EUA
+            ["Verstappen", "Perez", "Hamilton", "Leclerc", "Alonso"],//México
+            ["Não informou", "Não informou", "Não informou", "Não informou", "Não informou"],//Brasil
+            ["Não informou", "Não informou", "Não informou", "Não informou", "Não informou"]//Abu Dhabi
         ],
         resultados: [
             ["Leclerc", "Sainz", "Hamilton", "Russel", "Magnussen"],//Bahrain
@@ -111,6 +144,17 @@
             ["Verstappen", "Sainz", "Hamilton", "Russel", "Leclerc"],//Canadá
             ["Sainz", "Perez", "Hamilton", "Leclerc", "Alonso"],//Inglaterra
             ["Leclerc", "Verstappen", "Hamilton", "Russel", "Ocon"],//Áustria
+            ["Verstappen", "Hamilton", "Russel", "Perez", "Sainz"],//França
+            ["Verstappen", "Hamilron", "Russel", "Sainz", "Perez"],//Hungria
+            ["Verstappen", "Perez", "Sainz", "Russel", "Alonso"],//Bélgica
+            ["Verstappen", "Russel", "Leclerc", "Hamilton", "Perez"],//Holanda
+            ["Verstappen", "Leclerc", "Russel", "Sainz", "Hamilton"],//Monza
+            ["Perez", "Leclerc", "Sainz", "Norris", "Ricciardo"],//Singapura
+            ["Verstappen", "Perez", "Leclerc", "Ocon", "Hamilton"],//Japão
+            ["Verstappen", "Hamilton", "Leclerc", "Perez", "Russel"],//EUA
+            ["Verstappen", "Hamilton", "Perez", "Russel", "Sainz"],//México
+            ["Russel", "Hamilton", "Sainz", "Leclerc", "Alonso"],//Brasil
+            ["Verstappen", "Leclerc", "Perez", "Sainz", "Russel"]//Abu Dhabi
         ],
     };
 
