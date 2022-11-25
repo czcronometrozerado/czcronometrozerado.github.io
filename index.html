@@ -243,13 +243,16 @@
                                 //Caio, Rafa, Operador de Câmera
                 posicoesCorretas : [0, 0, 0],
                 estaNoTop5 :       [0, 0, 0],
+                aproveitamento:    [[0,0], [0,0], [0,0]],
 
                 posicoesCorretasEtapa : [[],[],[]],
                 estaNoTop5Etapa : [[],[],[]],
             }
 
+            let numCorridas = corridas.nomeEtapas.length;
+
             //Varre o vetor Etapa por Etapa
-            for(let i=0; i<corridas.nomeEtapas.length; i++){
+            for(let i=0; i<numCorridas; i++){
                 retorno.posicoesCorretasEtapa[0].push(0)
                 retorno.estaNoTop5Etapa[0].push(0)
                 
@@ -292,14 +295,19 @@
                         retorno.estaNoTop5Etapa[2][i] ++;
                     }
                 }
+            }
 
+            let numPilotos = 5 * numCorridas;
+            for(let x=0; x<3; x++){
+                retorno.aproveitamento[x][0] = Math.round((retorno.posicoesCorretas[x]/numPilotos)*100 *10)/10;
+                retorno.aproveitamento[x][1] = Math.round((retorno.estaNoTop5[x]/numPilotos)*100 *10)/10;
             }
 
             return retorno;
 
         }
 
-        const {posicoesCorretas, estaNoTop5, posicoesCorretasEtapa, estaNoTop5Etapa} = contarAcerto(corridas)
+        const {posicoesCorretas, estaNoTop5, aproveitamento, posicoesCorretasEtapa, estaNoTop5Etapa} = contarAcerto(corridas)
 
         //Criando tabela de acertos
         gerarTabela += `
@@ -349,6 +357,15 @@
                 <th>${estaNoTop5[1]}</th>
                 <th>${posicoesCorretas[2]}</th>
                 <th>${estaNoTop5[2]}</th>
+            </tr>
+            <tr>
+                <th>APROVEITAMENTO</th>
+                <th>${aproveitamento[0][0]}%</th>
+                <th>${aproveitamento[0][1]}%</th>
+                <th>${aproveitamento[1][0]}%</th>
+                <th>${aproveitamento[1][1]}%</th>
+                <th>${aproveitamento[2][0]}%</th>
+                <th>${aproveitamento[2][1]}%</th>
             </tr>
         `
 
